@@ -6,7 +6,7 @@
 /*   By: roramos <roramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:14 by roramos           #+#    #+#             */
-/*   Updated: 2022/11/29 17:07:55 by roramos          ###   ########.fr       */
+/*   Updated: 2022/11/29 17:14:44 by roramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,7 @@ void	send_msg(pid_t sv_pid, char *msg)
 void	sig_handler(int signum)
 {
 	if (signum == SIGUSR1)
-		printf("Received SIGUSR1\n");
-	else if (signum == SIGUSR2)
-	{
-		write(1, "Message has been sucessfully receieved!\n", 39);
-		exit(EXIT_SUCCESS);
-	}
+		printf("Character send!\n");
 }
 
 void	create_signal(void)
@@ -66,8 +61,6 @@ void	create_signal(void)
 	sa_newsig.sa_flags = SA_SIGINFO;
 	if (sigaction(SIGUSR1, &sa_newsig, NULL) == -1)
 		handle_errors("Failed to change SIGUSR1's behavior");
-	if (sigaction(SIGUSR2, &sa_newsig, NULL) == -1)
-		handle_errors("Failed to change SIGUSR2's behavior");
 }
 
 int	main(int argc, char **argv)
