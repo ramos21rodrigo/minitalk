@@ -6,11 +6,11 @@
 /*   By: roramos <roramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:39 by roramos           #+#    #+#             */
-/*   Updated: 2022/11/29 17:10:24 by roramos          ###   ########.fr       */
+/*   Updated: 2022/11/29 17:17:31 by roramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	handle_sigusr(int signum, siginfo_t *info, void *ucontent)
 {
